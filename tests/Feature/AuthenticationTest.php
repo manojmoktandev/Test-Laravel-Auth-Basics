@@ -98,9 +98,6 @@ class AuthenticationTest extends TestCase
         $response = $this->get('/secretpage');
         $response->assertRedirect('/verify-email');
 
-        $user = User::factory()->create([
-            'email_verified_at' => null,
-        ]);
 
         Event::fake();
 
